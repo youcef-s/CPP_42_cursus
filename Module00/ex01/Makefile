@@ -25,3 +25,7 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 	@echo It\'s all clean
+
+re : fclean all
+
+.PHONY : all clean fclean re
