@@ -10,12 +10,12 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(HDR)
-	@c++ $(FLAGS) $(OBJ) -o $@
+$(NAME) : $(OBJ)
+	@c++ $(FLAGS) $^ -o $@
 	@echo All set
 
-%.o: %.cpp
-	@c++ $(FLAGS) -c -o $@ $^
+%.o: %.cpp $(HDR)
+	@c++ $(FLAGS) -c -o $@ $<
 	@echo Compiling....
 
 clean :
