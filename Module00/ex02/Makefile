@@ -4,7 +4,7 @@ SRC = Account.cpp tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS = #-Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
@@ -12,8 +12,8 @@ $(NAME) : $(OBJ)
 	@c++ $(FLAGS) $^ -o $@
 	@echo All set
 
-%.o : %.cpp
-	@c++ $(FLAGS) -c $^ -o $@
+%.o : %.cpp Account.hpp
+	@c++ $(FLAGS) -c $< -o $@
 	@echo Compiling....
 
 clean :
