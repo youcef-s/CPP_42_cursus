@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 21:09:47 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/07/24 19:16:12 by ylabtaim         ###   ########.fr       */
+/*   Created: 2022/07/24 21:26:34 by ylabtaim          #+#    #+#             */
+/*   Updated: 2022/07/24 22:10:38 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-Weapon::Weapon(std::string str) : type(str) {}
+# include <iostream>
+# include <fstream>
 
-Weapon::~Weapon() {}
+class Replace
+{
+private:
+	std::string	_filename;
+	std::string	_s1;
+	std::string	_s2;
+public:
+	Replace(std::string filename, std::string s1, std::string s2);
+	~Replace();
+	void		ft_replace();
+	std::string	replace_line(std::string line);
+};
 
-const std::string &Weapon::getType() {
-	return (type);
-}
-
-void Weapon::setType(std::string WeaponType) {
-	type = WeaponType;
-}
+#endif

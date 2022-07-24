@@ -1,8 +1,6 @@
-NAME =  UnnecessaryViolence
+NAME = SedIsForLosers
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-
-HDR = Weapon.hpp HumanA.hpp HumanB.hpp
+SRC = main.cpp Replace.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -14,18 +12,18 @@ $(NAME) : $(OBJ)
 	@c++ $(FLAGS) $^ -o $@
 	@echo All set
 
-%.o : %.cpp $(HDR)
+%.o : %.cpp Replace.hpp
 	@c++ $(FLAGS) -c $< -o $@
-	@echo Compiling.......
+	@echo Compiling......
 
 clean :
 	@rm -f $(OBJ)
-	@echo Cleaning.........
+	@echo Cleaning.....
 
-fclean : clean
+fclean: clean
 	@rm -f $(NAME)
 	@echo All clean
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re

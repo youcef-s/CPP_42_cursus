@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 21:09:47 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/07/24 19:16:12 by ylabtaim         ###   ########.fr       */
+/*   Created: 2022/07/24 20:28:09 by ylabtaim          #+#    #+#             */
+/*   Updated: 2022/07/24 21:33:50 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Replace.hpp"
 
-Weapon::Weapon(std::string str) : type(str) {}
-
-Weapon::~Weapon() {}
-
-const std::string &Weapon::getType() {
-	return (type);
-}
-
-void Weapon::setType(std::string WeaponType) {
-	type = WeaponType;
+int	main(int ac, char **av) {
+	if (ac != 4) {
+		std::cout << "4 arguments are required"	<< std::endl;
+		return (1);
+	}
+	Replace	instance(av[1], av[2], av[3]);
+	instance.ft_replace();
+	return (0);
 }
