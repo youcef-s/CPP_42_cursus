@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 21:29:36 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/07/24 22:19:30 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/07/25 12:19:27 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ std::string	Replace::replace_line(std::string line) {
 	int			start;
 	std::string	new_line;
 	
-    while ((pos = line.find(_s1, pos)) != (int)std::string::npos)
-    {
+    while ((pos = line.find(_s1, pos)) != (int)std::string::npos) {
 		start = pos;
 		new_line = line.substr(0, start);
 		new_line += _s2;
@@ -52,4 +51,6 @@ void	Replace::ft_replace() {
 		ifile.close();
 		ofile.close();
 	}
+	else
+		std::cout << "Cannot open " << _filename << std::endl;
 }
