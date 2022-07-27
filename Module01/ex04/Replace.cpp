@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.cpp                                        :+:      :+:    :+:   */
+/*   Replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 21:29:36 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/07/25 12:19:27 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:21:25 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ Replace::~Replace(){}
 
 std::string	Replace::replace_line(std::string line) {
     int 		pos = 0;
-	int			start;
 	std::string	new_line;
 	
+	if (_s1 == "") {
+		return (line);
+	}
     while ((pos = line.find(_s1, pos)) != (int)std::string::npos) {
-		start = pos;
-		new_line = line.substr(0, start);
+		new_line = line.substr(0, pos);
 		new_line += _s2;
-		start += _s1.length();
-		new_line += line.substr(start);
+		pos += _s1.length();
+		new_line += line.substr(pos);
 		line = new_line;
-		pos += _s2.length();
     }
-    return line;
+    return (line);
 }
 
 void	Replace::ft_replace() {
