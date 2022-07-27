@@ -12,7 +12,7 @@ $(NAME) : $(OBJ)
 	@c++ $(FLAGS) $^ -o $@
 	@echo All set
 
-%.o : %.cpp
+%.o : %.cpp Zombie.hpp
 	@c++ $(FLAGS) -c $< -o $@
 	@echo Compiling.......
 
