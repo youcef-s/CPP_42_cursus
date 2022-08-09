@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:34:45 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/08/08 14:46:18 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:55:39 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ bool bsp( Point const a, Point const b, Point const c, Point const point) {
 
 	float A3 = area(a.getX().toFloat(), a.getY().toFloat(), b.getX().toFloat(),
 		b.getY().toFloat(), point.getX().toFloat(), point.getY().toFloat());
+
+	if (!A1 || !A2 || !A3)
+		return (false);
 
 	if (A == A1 + A2 + A3)
 		return (true);
