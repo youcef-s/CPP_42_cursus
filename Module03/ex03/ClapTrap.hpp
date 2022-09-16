@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 15:30:32 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/08/12 17:43:47 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/16 12:04:55 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		
-	private:
+	protected:
 		std::string _Name;
 		int			_HitPoints;
 		int 		_EnergyPoints;
