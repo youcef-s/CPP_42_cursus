@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:13:50 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/20 18:31:45 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:07:44 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Character : public ICharacter {
 	private:
 		std::string	_name;
 		AMateria*	_slot[4];
+		AMateria*	_garbage[4];
 };
 
 #endif

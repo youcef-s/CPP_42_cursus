@@ -6,13 +6,17 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:13:46 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/20 18:55:25 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:10:22 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character() {
+	for (int i = 0; i < 4; i++) {
+		_slot[i] = NULL;
+		_garbage[i] = NULL;
+	}
 	std::cout << "\e[0;33mDefault Constructor called of Character\e[0m" << std::endl;
 }
 
@@ -27,11 +31,13 @@ Character::Character(const Character &copy) {
 }
 
 Character::~Character() {
-	for (int i =0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (_slot[i])
 			delete _slot[i];
+		if (_garbage[i])
+			delete _garbage[i];
 	}
-	std::cout << "\e[0;31mDestructor called of Character\e[0m" << std::endl;
+	std::cout << "\e[0;31mDestructor called of Character " << _name << "\e[0m" << std::endl;
 }
 
 Character & Character::operator=(const Character &assign) {
@@ -66,6 +72,7 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
 	if (idx < 0 || idx > 3)
 		return ;
+	_garbage[idx] = _slot[idx];
 	_slot[idx] = NULL;
 }
 

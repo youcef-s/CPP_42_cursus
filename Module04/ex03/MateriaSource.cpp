@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:12:09 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/20 18:56:01 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/21 13:24:36 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,26 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::MateriaSource(const MateriaSource &copy) {
 	for (int i = 0; i < 4; i++) {
-		delete _slot[i];
-		_slot[i] = copy._slot[i];
+		if (_slot[i])
+			delete _slot[i];
+		_slot[i] = copy._slot[i]->clone();
 	}
 	std::cout << "\e[0;33mCopy Constructor called of MateriaSource\e[0m" << std::endl;
 }
 
 MateriaSource::~MateriaSource() {
 	for (int i = 0; i < 4; i++) {
-		delete _slot[i];
+		if (_slot[i])
+			delete _slot[i];
 	}
 	std::cout << "\e[0;31mDestructor called of MateriaSource\e[0m" << std::endl;
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource &assign) {
 	for (int i = 0; i < 4; i++) {
-		delete _slot[i];
-		_slot[i] = assign._slot[i];
+		if (_slot[i])
+			delete _slot[i];
+		_slot[i] = assign._slot[i]->clone();
 	}
 	return *this;
 }
