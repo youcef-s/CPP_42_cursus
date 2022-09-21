@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:36:17 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/18 16:29:33 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:18:28 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 int	main(void) {
 
-	// const Animal	*animals[4];
-	// for (int i = 0; i < 4; i++) {
-	// 	if (i % 2 == 0)
-	// 		animals[i] = new Dog();
-	// 	else
-	// 		animals[i] = new Cat();
-	// }
-	// for (int i = 0; i < 4; i++) {
-	// 	std::cout << animals[i]->getType() << std::endl;
-	// }
-	// for (int i = 0; i < 4; i++) {
-	// 	delete animals[i];
-	// }
+	const Animal	*animals[4];
+	for (int i = 0; i < 4; i++) {
+		if (i % 2 == 0)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+	for (int i = 0; i < 4; i++) {
+		std::cout << animals[i]->getType() << std::endl;
+	}
+	for (int i = 0; i < 4; i++) {
+		delete animals[i];
+	}
 
 	std::cout << std::endl;
 
