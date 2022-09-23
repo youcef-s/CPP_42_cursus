@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 12:39:08 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/23 14:19:47 by ylabtaim         ###   ########.fr       */
+/*   Created: 2022/09/23 12:39:14 by ylabtaim          #+#    #+#             */
+/*   Updated: 2022/09/23 12:39:15 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void	Bureaucrat::signForm(Form & form) {
 		form.beSigned(*this);
 	}
 	catch (std::exception & e) {
-		std::cout << _Name << " could not Sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << _Name << " could not Sign " << form.getName()
+			<< "'s form because " << e.what() << std::endl;
 		return ;
 	}
 	std::cout << _Name << " Signed " << form.getName() << std::endl;

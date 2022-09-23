@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 17:06:34 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/23 11:24:20 by ylabtaim         ###   ########.fr       */
+/*   Created: 2022/09/22 17:10:04 by ylabtaim          #+#    #+#             */
+/*   Updated: 2022/09/22 17:37:15 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string>
-# include <cstdlib>
-# include <ctime>
 # include "Form.hpp"
 
-class RobotomyRequestForm : public Form {
+class PresidentialPardonForm : public Form {
 	public:
-		RobotomyRequestForm();
-		RobotomyRequestForm(const RobotomyRequestForm &copy);
-		RobotomyRequestForm(std::string target);
-		~RobotomyRequestForm();
-		RobotomyRequestForm & operator=(const RobotomyRequestForm &assign);
+		PresidentialPardonForm();
+		PresidentialPardonForm(const PresidentialPardonForm &copy);
+		PresidentialPardonForm(std::string target);
+		~PresidentialPardonForm();
+		PresidentialPardonForm & operator=(const PresidentialPardonForm &assign);
 
 		std::string getTarget() const;
 		void setTarget(std::string target);

@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:44:15 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/22 14:33:01 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:50:29 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,19 @@ Form::Form() : _Name(""), _Signed(0), _GradeToSign(0), _GradeToExecute(0) {
 
 Form::Form(const Form &copy)
 : _Name(copy._Name), _Signed(copy._Signed), _GradeToSign(copy._GradeToSign), _GradeToExecute(copy._GradeToExecute) {
+	if (_GradeToSign > 150 || _GradeToExecute > 150)
+		throw (GradeTooLowException());
+	if (_GradeToSign < 1 || _GradeToExecute < 1)
+		throw (GradeTooHighException());
 	std::cout << "\e[0;33mCopy Constructor called of Form " << _Name << "\e[0m" << std::endl;
 }
 
 Form::Form(const std::string Name, const int GradeToSign, const int GradeToExecute)
 : _Name(Name), _Signed(0), _GradeToSign(GradeToSign), _GradeToExecute(GradeToExecute) {
+	if (_GradeToSign > 150 || _GradeToExecute > 150)
+		throw (GradeTooLowException());
+	if (_GradeToSign < 1 || _GradeToExecute < 1)
+		throw (GradeTooHighException());
 	std::cout << "\e[0;33mConstructor called of Form " << _Name << "\e[0m" << std::endl;
 }
 

@@ -6,29 +6,24 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 12:02:57 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/23 13:49:43 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:50:17 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 
 int	main(void) {
 
 	try {
+		Intern	Richard;
+		Form*	form;
 
-		Form		form("Form1", 10, 10);
-		Bureaucrat	joe("Joe", 10);
-		Bureaucrat	johnny("Johnny", 5);
-		Bureaucrat	john("John", 20);
-
-		joe.signForm(form);
-		johnny.signForm(form);
-		john.signForm(form);
-
+		form = Richard.makeForm("presidential pardon", "Jordan");
+		delete form;
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 	}
-
 	return (0);
 }

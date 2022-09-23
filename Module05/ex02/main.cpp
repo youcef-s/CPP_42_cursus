@@ -6,23 +6,35 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 12:02:57 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/22 18:42:29 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:18:48 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int	main(void) {
 
 	try {
-		ShrubberyCreationForm a("tree");
-		Bureaucrat	b("Joe", 10);
-		a.beSigned(b);
-		a.execute(b);
+		ShrubberyCreationForm	TreePlant("tree");
+		PresidentialPardonForm	Pardon("Jimmy");
+		RobotomyRequestForm		Robotomize("George");
+		Bureaucrat				Joe("Joe", 5);
+
+		TreePlant.beSigned(Joe);
+		Pardon.beSigned(Joe);
+		Robotomize.beSigned(Joe);
+
+		Joe.executeForm(TreePlant);
+		std::cout << std::endl;
+		Joe.executeForm(Pardon);
+		std::cout << std::endl;
+		Joe.executeForm(Robotomize);
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	return (0);
 }
