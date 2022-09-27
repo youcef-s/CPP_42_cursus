@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:31:20 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/26 16:02:43 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:47:41 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,15 @@
 Base * generate(void) {
 
 	Base*	inst[3] = {new A, new B, new C};
-	int idx;
 	srand(time(NULL));
 	int	randNbr = rand() % 3;
 
 	for(int i = 0; i < 3; ++i) {
-		if (i == randNbr) {
-			idx = randNbr;
+		if (i == randNbr)
 			continue;
-		}
 		delete inst[i];
 	}
-	return inst[idx];
+	return inst[randNbr];
 }
 
 void identify(Base* p) {
