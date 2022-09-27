@@ -6,7 +6,7 @@
 /*   By: ylabtaim <ylabtaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 15:05:39 by ylabtaim          #+#    #+#             */
-/*   Updated: 2022/09/25 14:43:34 by ylabtaim         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:55:35 by ylabtaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ Converter & Converter::operator=(const Converter &assign) {
 
 void	Converter::convertToChar() {
 	try {
+		if (_Input[0] == '.')
+			_Input = "0" + _Input;
 		int	i = std::stoi(_Input);
 		if (isprint(i))
 			std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
@@ -44,6 +46,8 @@ void	Converter::convertToChar() {
 
 void	Converter::convertToInt() {
 	try {
+		if (_Input[0] == '.')
+			_Input = "0" + _Input;
 		int i = std::stoi(_Input);
 		std::cout << "int: " << i << std::endl;
 	}
