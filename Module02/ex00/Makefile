@@ -1,11 +1,15 @@
+NAME = Fixed
+
 SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-all : $(OBJ)
-	@c++ $(FLAGS) $^
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	@c++ $(FLAGS) $^ -o $(NAME)
 	@echo All set
 
 %.o : %.cpp Fixed.hpp
@@ -17,7 +21,7 @@ clean :
 	@echo Cleaning......
 
 fclean : clean
-	@rm -f a.out
+	@rm -f $(NAME)
 	@echo All clean
 
 re : fclean all
